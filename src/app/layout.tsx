@@ -1,4 +1,7 @@
-import './globals.css'
+"use client";
+
+import React, { useState } from 'react';
+import './globals.scss'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,6 +16,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const [isDark, setIsDark] = useState(false);
+    const switchTheme: any = () => {
+      setIsDark(!isDark);
+    };
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
